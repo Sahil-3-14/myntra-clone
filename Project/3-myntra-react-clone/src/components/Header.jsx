@@ -1,19 +1,21 @@
-import { FaHeartbeat } from "react-icons/fa";
-import { FaCartPlus } from "react-icons/fa6";
+// this is the header of the app
+
+import { FaBagShopping,  FaFaceGrinHearts } from "react-icons/fa6";
 import { BsFillPersonFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
   return (
     <header>
       <div className="logo_container">
-        <a href="#">
+        <Link to="/">
           <img
             className="myntra_home"
             src="images/myntra_logo.webp"
             alt="Myntra Home"
           />
-        </a>
+        </Link>
       </div>
       <nav className="nav_bar">
         <a href="#">Men</a>
@@ -32,22 +34,23 @@ const Header = () => {
           placeholder="Search for products, brands and more"
         />
       </div>
+
       <div className="action_bar">
-        <div className="action_container">
+        <Link className="action_container">
           <BsFillPersonFill />
           <span className="action_name">Profile</span>
-        </div>
-        <div className="action_container">
-          <FaHeartbeat />
+        </Link>
 
+        <Link className="action_container">
+          <FaFaceGrinHearts />
           <span className="action_name">Wishlist</span>
-        </div>
-        <a className="action_container" href="pages/bag.html">
-          <FaCartPlus />
+        </Link>
 
+        <Link className="action_container" to="/bag">
+          <FaBagShopping />
           <span className="action_name">Bag</span>
-          {/* <span className="bag-item-count">0</span> */}
-        </a>
+          <span className="bag-item-count">0</span>
+        </Link>
       </div>
     </header>
   );

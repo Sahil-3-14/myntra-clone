@@ -1,3 +1,5 @@
+// this is the footer of the app 
+
 const Footer = () => {
   return (
     <>
