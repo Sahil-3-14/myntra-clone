@@ -2,10 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import {Provider} from "react-redux"
-
 import App from "./routes/App.jsx";
 import Home from './routes/Home.jsx'
 import Bag from "./routes/Bag.jsx";
