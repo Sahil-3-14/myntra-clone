@@ -6,6 +6,7 @@ import { fetchStatusActions } from "../store/fetchStatusSlice";
 const FetchItems = () => {
   const fetchStatus = useSelector((store) => store.fetchStatus);
   const dispatch = useDispatch();
+  // console.log(fetchStatus)
 
   useEffect(() => {
     if (fetchStatus.fetchDone) return;
@@ -17,10 +18,10 @@ const FetchItems = () => {
     fetch("http://localhost:8080/items", { signal })
       .then((res) => res.json())
       .then(({ items }) => {
-        console.log("items fetched")
-        // dispatch(fetchStatusActions.markFetchDone());
-        // dispatch(fetchStatusActions.markFetchingFinished());
-        // dispatch(itemsActions.addInitialItems(items[0]));
+        console.log("items fetched", items)
+        dispatch(fetchStatusActions.markFetchDone());
+        dispatch(fetchStatusActions.markFetchingFinished());
+        dispatch(itemsActions.addInitialItems(items));
       });
 
     return () => {

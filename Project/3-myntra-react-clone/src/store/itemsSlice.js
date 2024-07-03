@@ -6,14 +6,15 @@ const itemsSlice = createSlice({
     initialState: [],
     reducers: {
         addInitialItems: ((state, action) => {
-            return action.payload ;
             // console.log("reducer here" , state, action);
+            return action.payload 
+            
         })
     }
 
 })
 
-export const itemsAction = itemsSlice.actions;
+export const itemsActions = itemsSlice.actions;
 
 export default itemsSlice;
 
